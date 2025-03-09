@@ -1,62 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
 
- #include <stdio.h>
- #include<math.h>
- int registerMarks();
-
- int main(){
-
-    int mathsArray[4];
-    int physics[4];
-    int chemistry[4];
-    int average[4];
-    char tests[4][20] = {"coursework", "assignment", "mid-term", "end-of-term"};
-
-    // Ask for Math Test Scores
-    printf("Enter Maths Scores\n");
-    for (int i = 0; i < 4; i++)
-    {
-        printf("  Enter Score for %s; ", tests[i]);
-        // statement above will ensure we only ask 4 times
-        scanf("%d", &mathsArray[i]);
+int main()
+{
+    char *z[3][3];
+    printf("Enter the domestic animals:\n");
+    for(int x=0;x<3;x++){
+        scanf("%s",z[x]);
     }
-    printf("\n\n Maths Average score is %d\n\n\n", registerMarks(mathsArray));
-
- // Ask for physics Test Scores
-    printf("Enter Physics Scores\n");
-    for (int i = 0; i < 4; i++)
-    {
-        printf("  Enter Score for %s; ", tests[i]);
-        // statement above will ensure we only ask 4 times
-        scanf("%d", &physics[i]);
+    char *p[3][3];
+    printf("Enter the wild animals:\n");
+    for(int s=0;s<3;s++){
+        scanf("%s",p[s]);
     }
 
-    printf("\n\n Physics Average score is %d \n\n", registerMarks(physics));
-
-
-    // Ask for chemistry Test Scores
-    printf("Enter Chemistry Scores\n");
-    for (int i = 0; i < 4; i++)
-    {
-        printf("  Enter Score for %s; ", tests[i]);
-        // statement above will ensure we only ask 4 times
-        scanf("%d", &chemistry[i]);
+    printf("All animals are here:\n");
+    for(int i=0;i<3;i++){
+        printf("%s\n",z[i]);
+        printf("%s\n",p[i]);
     }
 
-    printf("\n\n Chemistry Average score is %d \n\n", registerMarks(chemistry));
+
     return 0;
-
- }
- int registerMarks(int *someArray){
-    // this function takes in a parameter callend someArray
-    int arrLength = sizeof(someArray) / 2;
-    int sum = 0;
-
-    for(int i=0; i<arrLength; i++){
-        sum += someArray[i];
-    }
-
-    int averageScore = sum / arrLength;
-    sum = 0;
-    return averageScore;
 }
-
